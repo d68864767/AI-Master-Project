@@ -1,0 +1,61 @@
+```javascript
+// components/AppRouter.js
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import AboutPage from './AboutPage';
+import NotFoundPage from './NotFoundPage';
+
+const AppRouter = () => (
+  <Switch>
+    <Route exact path="/" component={HomePage} />
+    <Route path="/about" component={AboutPage} />
+    <Route component={NotFoundPage} />
+  </Switch>
+);
+
+export default AppRouter;
+```
+
+```javascript
+// components/HomePage.js
+import React from 'react';
+
+const HomePage = () => (
+  <div>
+    <h1>Welcome to the Home Page</h1>
+    {/* Other components or content can go here */}
+  </div>
+);
+
+export default HomePage;
+```
+
+```javascript
+// components/AboutPage.js
+import React from 'react';
+
+const AboutPage = () => (
+  <div>
+    <h1>About Us</h1>
+    {/* Other components or content can go here */}
+  </div>
+);
+
+export default AboutPage;
+```
+
+```javascript
+// components/NotFoundPage.js
+import React from 'react';
+
+const NotFoundPage = () => (
+  <div>
+    <h1>404 - Page Not Found</h1>
+    {/* Other components or content can go here */}
+  </div>
+);
+
+export default NotFoundPage;
+```
+

@@ -1,0 +1,56 @@
+```javascript
+// redux/actions.js
+export const ACTION_TYPE_1 = 'ACTION_TYPE_1';
+export const ACTION_TYPE_2 = 'ACTION_TYPE_2';
+
+export const action1 = (payload) => ({
+  type: ACTION_TYPE_1,
+  payload,
+});
+
+export const action2 = (payload) => ({
+  type: ACTION_TYPE_2,
+  payload,
+});
+```
+
+```javascript
+// redux/reducers.js
+import { ACTION_TYPE_1, ACTION_TYPE_2 } from './actions';
+
+const initialState = {
+  // Define your initial state here
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ACTION_TYPE_1:
+      // Handle ACTION_TYPE_1
+      return {
+        ...state,
+        // Update state based on action.payload
+      };
+    case ACTION_TYPE_2:
+      // Handle ACTION_TYPE_2
+      return {
+        ...state,
+        // Update state based on action.payload
+      };
+    default:
+      return state;
+  }
+};
+
+export default reducer;
+```
+
+```javascript
+// redux/index.js
+import { combineReducers } from 'redux';
+import reducer from './reducers';
+
+export default combineReducers({
+  reducer,
+});
+```
+

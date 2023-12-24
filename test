@@ -1,0 +1,60 @@
+```javascript
+// test/AppRouter.test.js
+import React from 'react';
+import { shallow } from 'enzyme';
+import AppRouter from '../components/AppRouter';
+
+describe('AppRouter', () => {
+  it('renders without crashing', () => {
+    shallow(<AppRouter />);
+  });
+});
+
+// test/HomePage.test.js
+import React from 'react';
+import { shallow } from 'enzyme';
+import HomePage from '../components/HomePage';
+
+describe('HomePage', () => {
+  it('renders without crashing', () => {
+    shallow(<HomePage />);
+  });
+});
+
+// test/actions.test.js
+import * as actions from '../redux/actions';
+
+describe('actions', () => {
+  it('should create an action to do something', () => {
+    const payload = 'Finish docs';
+    const expectedAction = {
+      type: actions.ACTION_TYPE_1,
+      payload
+    };
+    expect(actions.action1(payload)).toEqual(expectedAction);
+  });
+});
+
+// test/reducers.test.js
+import reducer from '../redux/reducers';
+import * as actions from '../redux/actions';
+
+describe('reducers', () => {
+  it('should return the initial state', () => {
+    expect(reducer(undefined, {})).toEqual({
+      // your initial state
+    });
+  });
+
+  it('should handle ACTION_TYPE_1', () => {
+    const action = {
+      type: actions.ACTION_TYPE_1,
+      payload: 'Finish docs'
+    };
+    const expectedState = {
+      // your expected state after handling ACTION_TYPE_1
+    };
+    expect(reducer(undefined, action)).toEqual(expectedState);
+  });
+});
+```
